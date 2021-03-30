@@ -7,13 +7,19 @@ contract Brydes {
     uint brydeDigits = 16;
     uint brydeModulus = 10 ** dnaDigits;
 
+    // create a new struct type
+    // takes in a name and a dna 
     struct Bryde {
         string name;
         uint dna;
     }
-
+    
+    // create a new extensible struct of type Bryde named brydes 
     Bryde[] public brydes;
 
+    // create a bryde 
+    // takes in a name and a dna
+    // push 
     function _createBryde(string memory _name, uint _dna) private {
         brydes.push(Bryde(_name, _dna));
         uint id = brydes.push(Bryde(_name, _dna)) - 1;
